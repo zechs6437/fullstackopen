@@ -1,4 +1,4 @@
-const Name = ({ persons, filter }) => {
+const Name = ({ persons, filter, deleteHandler }) => {
   const newList =
     filter === ""
       ? persons
@@ -9,7 +9,7 @@ const Name = ({ persons, filter }) => {
         );
   return newList.map((prop) => (
     <div key={prop.name}>
-      {prop.name} {prop.number}
+      {prop.name} {prop.number} <button onClick={() => {deleteHandler(prop)}}>delete</button>
     </div>
   ));
 };
